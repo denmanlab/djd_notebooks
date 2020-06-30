@@ -1,0 +1,85 @@
+{
+  "target_simulator": "NEURON",
+  "run": {
+    "tstart": 0.0,
+    "tstop": 3000.0,
+    "dt": 0.1,
+    "dL": 20.0,
+    "spike_threshold": -15.0,
+    "nsteps_block": 5000
+  },
+  "conditions": {
+    "celsius": 34.0,
+    "v_init": -80.0
+  },
+  "inputs": {
+    "mthalamus_spikes": {
+      "input_type": "spikes",
+      "module": "sonata",
+      "input_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/inputs/mthalamus_spikes.h5",
+      "node_set": "mthalamus"
+    }
+  },
+  "output": {
+    "log_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/output/log.txt",
+    "output_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/output",
+    "spikes_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/output/spikes.h5"
+  },
+  "reports": {
+    "v_report": {
+      "variable_name": "v",
+      "cells": "all",
+      "module": "membrane_report",
+      "sections": "soma"
+    },
+    "cai_report": {
+      "variable_name": "cai",
+      "cells": "all",
+      "module": "membrane_report",
+      "sections": "soma"
+    }
+  },
+  "node_sets_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/node_sets.json",
+  "network": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/circuit_config.json",
+  "config_path": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/simulation_config.json",
+  "config_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b",
+  "components": {
+    "mechanisms_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/components/mechanisms",
+    "morphologies_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/components/morphologies",
+    "__pycache___dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/components/__pycache__",
+    "synaptic_models_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/components/synaptic_models",
+    "biophysical_neuron_models_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/components/biophysical_neuron_models",
+    "templates_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/components/templates",
+    "point_neuron_models_dir": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/components/point_neuron_models"
+  },
+  "networks": {
+    "nodes": [
+      {
+        "nodes_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mcortex_nodes.h5",
+        "node_types_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mcortex_node_types.csv"
+      },
+      {
+        "node_types_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mthalamus_node_types.csv",
+        "nodes_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mthalamus_nodes.h5"
+      }
+    ],
+    "edges": [
+      {
+        "edge_types_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mthalamus_mcortex_edge_types.csv",
+        "edges_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mthalamus_mcortex_edges.h5"
+      },
+      {
+        "edge_types_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mcortex_mcortex_edge_types.csv",
+        "edges_file": "/Users/danieljdenman/github/djd_notebooks/sim_ch03b/network/mcortex_mcortex_edges.h5"
+      }
+    ]
+  },
+  "node_sets": {
+    "biophysical_nodes": {
+      "model_type": "biophysical"
+    },
+    "point_nodes": {
+      "model_type": "point_process"
+    }
+  }
+}

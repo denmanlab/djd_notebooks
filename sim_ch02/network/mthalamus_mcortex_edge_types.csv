@@ -1,0 +1,2 @@
+edge_type_id target_query source_query target_sections weight_function syn_weight distance_range delay dynamics_params model_template
+100 * pop_name=='tON' "['basal', 'apical']" NULL 0.001 "[0.0, 150.0]" 2.0 AMPA_ExcToExc.json exp2syn

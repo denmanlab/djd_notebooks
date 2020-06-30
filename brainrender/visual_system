@@ -1,0 +1,13 @@
+import brainrender
+brainrender.SHADER_STYLE = 'cartoon'
+from brainrender.scene import Scene
+
+scene = Scene()
+
+# Add the whole thalamus in gray
+scene.add_brain_regions(['VISp'], alpha=.15)
+
+# Add VAL nucleus in wireframe style with the allen color
+scene.add_brain_regions(['LGd'], use_original_color=True, wireframe=True)
+
+scene.render()

@@ -1,0 +1,2 @@
+node_type_id model_processing model_template dynamics_params morphology pop_name mem_potential model_type
+100 aibs_perisomatic ctdb:Biophys1.hoc 472363762_fit.json Scnn1a_473845048_m.swc Scnn1a e biophysical
