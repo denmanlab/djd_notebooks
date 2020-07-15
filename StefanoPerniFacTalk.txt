@@ -1,3 +1,0 @@
-Stefano Perni Fac Talk
-ER-PM junction
-junctophilin link ER-PM, allows CaV to induce Carelease from ER
